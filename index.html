@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario interactivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<header>
+    <h1>Formulario interactivo</h1>
+</header>
+<body>
+    <form id="formulario">
+        <p>
+            <label for="titulo">Titulo:</label>
+            <input type="text" id="titulo" name="titulo">
+        </p>
+        <p>
+            <label for="director">Director:</label>
+            <input type="text" id="director" name="director">
+        </p>
+        <p>
+            <label for="año">Año:</label>
+            <input type="text" id="año" name="año">
+        </p>
+        <p> 
+        <label for="generos">Géneros:</label>
+        <select id="generos" name="generos">
+            <option value="terror">Terror</option>
+            <option value="romantica">Romántica</option>
+            <option value="accion">Acción</option>
+            <option value="ciencia_ficcion">Ciencia Ficción</option>
+        </select>
+        </p>
+            <button type="submit">Enviar</button>
+        </p>
 
+    </form>
+    <table>
+        <tr>
+            <th id="titulo">Título</th>
+            <th id="director">Director</th>
+            <th id="año">Año</th>
+        </tr>
+    </table>
+</body>
+</html>
