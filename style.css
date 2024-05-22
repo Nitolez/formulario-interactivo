@@ -63,7 +63,7 @@ textarea {
     height: 150px;
 }
 
-#submit {
+#enviar {
     background-color: #4CAF50;
     color: white;
     padding: 10px 15px;
@@ -113,4 +113,62 @@ tr:nth-child(even) td {
 
 tbody tr:hover td {
     background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        padding: 8px;
+    }
+
+    #enviar {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+        margin: 5px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        padding: 6px;
+    }
+
+    #enviar {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
 }

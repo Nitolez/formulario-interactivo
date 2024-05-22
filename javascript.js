@@ -1,17 +1,79 @@
-const formulario = document.querySelector("#formulario")
-const listaErrores = document.querySelector("#listaErrores")
+//VARIABLES
+let formulario = document.querySelector("#formulario")
+let listaErrores = document.querySelector("#listaErrores")
+let tabla = document.querySelector("#tabla")
 let errores = ""
-
-let regExp = /^[a-zA-Z]$/i
 let validarAño = /^(18|19|20)\d{2}$/;
+let arrayPeliculas = []
 
 
-formulario.addEventListener("submit", (ev) => {
+//EVENTOS 
+
+formulario.addEventListener('submit', (ev) => {
     ev.preventDefault()
     validarForm()
 })
 
+//FUNCIONES
 
+const validarForm = () => {
+    
+    const titulo = document.querySelector("#titulo").value
+    const director = document.querySelector("#director").value
+    const year = document.querySelector("#year").value
+
+
+
+//Capturo el value porque es lo que se rellena en el formulario
+
+    let errores = ''
+
+    if(titulo == ''){
+        errores += "<li>El nombre es obligatorio</li>"
+    }
+    if(director == ''){
+        errores += "<li>El director es obligatorio</li>"
+    }
+    if(year == ''){
+        
+        errores += "<li>El year es obligatorio</li>"
+    } else if(validarAño.test(year) === false){
+        errores += "<li>Pon un año entre 1800 y el actual, bitch</li>" 
+    }
+
+    if(errores !== ''){
+        listaErrores.innerHTML = errores
+    } else {
+        //formulario.submit()
+        arrayPeliculas.push({titulo, director, year})
+    }
+    console.log(arrayPeliculas)
+}
+
+
+const printGeneros = () => {
+    const generos = document.createElement("select")
+    generos.id = "generos"
+    generos.name = "generos"
+    const lista = document.querySelector('#generos')
+    const terror = document.createElement("option")
+    const romantica = document.createElement("option")
+    const accion = document.createElement("option")
+    const cienciaFiccion = document.createElement("option")
+
+    formulario.append(generos)
+    lista.append(terror)
+    lista.append(romantica)
+    lista.append(accion)
+    lista.append(cienciaFiccion)
+}
+//HAcerlo con el selet en el html ya directamente porque sino no se puede
+printGeneros()
+
+
+
+
+/*
 const objValidar = {
     titulo: "false",
     director: "false",
@@ -25,15 +87,7 @@ const validarForm = () => {
 
 //Capturo el value porque es lo que se rellena en el formulario
 
- 
-
     if(titulo != ""){
-        if(regExp.test(titulo)){
-            alert("Correo correcto")
-            objValidar.titulo="true"
-        } else{
-            alert("Correo incorrecto")
-        }
         objValidar.titulo = "true"
     } else {
         objValidar.titulo = "false"
@@ -47,7 +101,6 @@ const validarForm = () => {
 
     if(year != ""){
         if(validarAño.test(year)){
-            alert("Año correcto")
             objValidar.year="true"
         } else{
             alert("Año incorrecto")
@@ -71,33 +124,5 @@ const validarForm = () => {
     console.log({errores})
     listaErrores.innerHTML = errores
 }
-
-/*
-const validarForm = () => {
-    const titulo = formulario.titulo.value
-    const director = formulario.director.value
-    const year = formulario.year.value
-
-//Capturo el value porque es lo que se rellena en el formulario
-
-    let errores = ""
-
-    if(titulo == ""){
-        errores += "<li>El nombre es obligatorio</li>"
-    }
-    if(director == ""){
-        errores += "<li>El director es obligatorio</li>"
-    }
-    if(year == ""){
-        errores += "<li>El year es obligatorio</li>"
-    }
-
-    if(errores !== ""){
-        listaErrores.innerHTML = errores
-    } else {
-        formulario.submit()
-    }
-
-    console.log({errores})
-}
 */
+
