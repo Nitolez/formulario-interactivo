@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario interactivo</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,31 +9,25 @@
     <h1>Formulario interactivo</h1>
 </header>
 <body>
-    <form id="formulario">
-        <p>
+    <form id="formulario" action="" method="get">
             <label for="titulo">Titulo:</label>
             <input type="text" id="titulo" name="titulo">
-        </p>
-        <p>
+
             <label for="director">Director:</label>
             <input type="text" id="director" name="director">
-        </p>
-        <p>
+
             <label for="año">Año:</label>
             <input type="text" id="año" name="año">
-        </p>
-        <p> 
-        <label for="generos">Géneros:</label>
-        <select id="generos" name="generos">
-            <option value="terror">Terror</option>
-            <option value="romantica">Romántica</option>
-            <option value="accion">Acción</option>
-            <option value="ciencia_ficcion">Ciencia Ficción</option>
-        </select>
-        </p>
-            <button type="submit">Enviar</button>
-        </p>
 
+            <label for="generos">Géneros:</label>
+            <select id="generos" name="generos">
+                <option value="terror">Terror</option>
+                <option value="romantica">Romántica</option>
+                <option value="accion">Acción</option>
+                <option value="ciencia_ficcion">Ciencia Ficción</option>
+            </select>
+            <ul id="listaErrores"></ul>
+            <input type="submit" placeholder="Enviar" id="submit">
     </form>
     <table>
         <tr>
