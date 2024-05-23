@@ -27,7 +27,7 @@ filtro.addEventListener('change', (ev) => {
 //FUNCIONES
 
 const pintarElementos = () => {
-    const opciones = ["Selecciona un género", "Terror", "Romántica", "Acción", "Ciencia Ficción"];
+    const opciones = ["Selecciona un género", "Terror", "Romántica", "Acción", "Comedia"];
     const filtroTodos = document.createElement("option");
     filtroTodos.innerHTML = "Todos";
     filtro.append(filtroTodos);
@@ -199,6 +199,6 @@ HTML OPCIONES
                 <option value="terror">Terror</option> 
                 <option value="romantica">Romántica</option>
                 <option value="accion">Acción</option>
-                <option value="ciencia_ficcion">Ciencia Ficción</option>
+                <option value="ciencia_ficcion">Comedia</option>
 */
 
