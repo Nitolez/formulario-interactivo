@@ -18,6 +18,7 @@ formulario.addEventListener('submit', (ev) => {
     validarForm()
 })
 
+//Change es un evento que se dispara por defecto con select
 filtro.addEventListener('change', (ev) => {
     ev.preventDefault();
     filtrarPeliculas();
@@ -75,9 +76,6 @@ const validarForm = () => {
     if(genero == 'Selecciona un género'){
         errores += "<li>El género es obligatorio</li>"   
     }
-
-   // if(valorFiltro == 'Todos'){}
-
     if(errores !== ''){
         listaErrores.innerHTML = errores
     } else {
@@ -111,13 +109,14 @@ const agregarFilaTabla = (titulo, director, year, genero) => {
 //Creo los filtros
 
 const limpiarTabla = () => {
+    //deleteRow() elimina una fila específica de una tabla
     while (tabla.rows.length > 1) {
         tabla.deleteRow(1);
     }
 }
 
 const filtrarPeliculas = () => {
-    const generoPeli = filtro.value
+    const generoPeli = document.querySelector("#filtro").value
     let peliculasFiltradas = arrayPeliculas
 
     if(generoPeli !== 'Todos'){
