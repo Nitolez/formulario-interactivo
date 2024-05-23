@@ -9,7 +9,7 @@
     <h1>Formulario interactivo</h1>
 </header>
 <body>
-    <form id="formulario" action="" method="get">
+    <form id="formulario" action="enviar_formulario.php" method="get">
             <label for="titulo">Titulo:</label>
             <input type="text" id="titulo" name="titulo">
 
@@ -19,21 +19,20 @@
             <label for="year">Año:</label>
             <input type="text" id="year" name="year">
 
+
             <label for="generos">Géneros:</label>
-            <select id="generos" name="generos">
-                <option value="terror">Terror</option>
-                <option value="romantica">Romántica</option>
-                <option value="accion">Acción</option>
-                <option value="ciencia_ficcion">Ciencia Ficción</option>
-            </select>
+            <select id="generos" name="generos"></select>
+
             <ul id="listaErrores"></ul>
             <input type="submit" placeholder="Enviar" id="enviar">
     </form>
+    <select id="filtro"></select>
     <table id="tabla">
         <tr id="fila">
             <th id="titulo">Título</th>
             <th id="director">Director</th>
             <th id="year">Año</th>
+            <th id="generoTabla">Género</th>
         </tr>
     </table>
     <script src="javascript.js"></script>
