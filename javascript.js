@@ -132,72 +132,7 @@ const filtrarPeliculas = () => {
 
 }
 
+//LLAMADA A FUNCIONES
 
 pintarElementos();
-
-
-console.log(arrayPeliculas)
-
-
-
-
-/*
-const objValidar = {
-    titulo: "false",
-    director: "false",
-    year: "false",
-    }
-
-const validarForm = () => {
-    const titulo = formulario.titulo.value
-    const director = formulario.director.value
-    const year = formulario.year.value
-
-//Capturo el value porque es lo que se rellena en el formulario
-
-    if(titulo != ""){
-        objValidar.titulo = "true"
-    } else {
-        objValidar.titulo = "false"
-    }
-
-    if(director != ""){
-        objValidar.director = "true"
-    } else {
-        objValidar.director = "false"
-    }
-
-    if(year != ""){
-        if(validarAño.test(year)){
-            objValidar.year="true"
-        } else{
-            alert("Año incorrecto")
-        }
-        objValidar.year = "true"
-    } else {
-        objValidar.year = "false"
-
-    } 
-
-    const valoresObjValidar = Object.values(objValidar)
-    console.log(valoresObjValidar)
-    const noValidado = valoresObjValidar.find((valor) => valor === "false")
-    console.log(noValidado)
-
-    if(noValidado){
-        errores += "<li>No valido</li>"
-    } else {
-        formulario.submit()
-    }
-    console.log({errores})
-    listaErrores.innerHTML = errores
-}
-
-HTML OPCIONES
-            
-                <option value="terror">Terror</option> 
-                <option value="romantica">Romántica</option>
-                <option value="accion">Acción</option>
-                <option value="ciencia_ficcion">Comedia</option>
-*/
 
