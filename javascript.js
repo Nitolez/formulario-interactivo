@@ -81,6 +81,7 @@ const validarForm = () => {
     } else {
         listaErrores.innerHTML = ''
         arrayPeliculas.push({titulo, director, year, genero})
+        localStorage.setItem('peliculas', JSON.stringify(arrayPeliculas))
         agregarFilaTabla(titulo, director, year, genero)
     }
 }
